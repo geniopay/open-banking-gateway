@@ -32,6 +32,11 @@ public class Xs2aContext extends BaseContext {
     private String psuId;
 
     /**
+     * The type of PSU ID.
+     */
+    private String psuIdType;
+
+    /**
      * Requested content type.
      */
     private String contentType = "application/json";

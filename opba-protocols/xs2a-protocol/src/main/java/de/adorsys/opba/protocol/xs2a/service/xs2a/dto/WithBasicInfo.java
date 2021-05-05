@@ -16,6 +16,7 @@ import static de.adorsys.opba.protocol.api.dto.codes.TypeCode.STRING;
 import static de.adorsys.xs2a.adapter.api.RequestHeaders.AUTHORIZATION;
 import static de.adorsys.xs2a.adapter.api.RequestHeaders.CONTENT_TYPE;
 import static de.adorsys.xs2a.adapter.api.RequestHeaders.PSU_ID;
+import static de.adorsys.xs2a.adapter.api.RequestHeaders.PSU_ID_TYPE;
 import static de.adorsys.xs2a.adapter.api.RequestHeaders.X_GTW_ASPSP_ID;
 import static de.adorsys.xs2a.adapter.api.RequestHeaders.X_REQUEST_ID;
 
@@ -32,6 +33,12 @@ public class WithBasicInfo {
     @ValidationInfo(ui = @FrontendCode(STRING), ctx = @ContextCode(FieldCode.PSU_ID))
     @NotBlank(message = "{no.ctx.psuId}")
     private String psuId;
+
+    /**
+     * PSU ID Type.
+     */
+    // TODO: Certain banks do require this
+    private String psuIdType;
 
     /**
      * ASPSP ID - bank ID to be used with Xs2a adapter.
@@ -54,6 +61,9 @@ public class WithBasicInfo {
     public Map<String, String> asMap() {
         Map<String, String> allValues = new HashMap<>();
         allValues.put(PSU_ID, psuId);
+        if (null != psuIdType) {
+            allValues.put(PSU_ID_TYPE, psuIdType);
+        }
         allValues.put(X_GTW_ASPSP_ID, aspspId);
         allValues.put(X_REQUEST_ID, requestId);
         allValues.put(CONTENT_TYPE, contentType);

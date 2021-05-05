@@ -60,6 +60,10 @@ public class Xs2aUpdateAuthorization implements UpdateAuthorization {
             context.setPsuId((String) extras.get(ExtraAuthRequestParam.PSU_ID));
         }
 
+        if (extras.containsKey(ExtraAuthRequestParam.PSU_ID_TYPE)) {
+            context.setPsuIdType((String) extras.get(ExtraAuthRequestParam.PSU_ID_TYPE));
+        }
+
         if (extras.containsKey(ExtraAuthRequestParam.PSU_IP_ADDRESS)) {
             context.setPsuIpAddress((String) extras.get(ExtraAuthRequestParam.PSU_IP_ADDRESS));
         }

@@ -11,6 +11,11 @@ public enum ExtraAuthRequestParam {
     PSU_ID,
 
     /**
+     * Users' (PSU) login type.
+     */
+    PSU_ID_TYPE,
+
+    /**
      * Users' (PSU) IP address.
      */
     PSU_IP_ADDRESS,

@@ -16,6 +16,11 @@ public enum FieldCode {
     PSU_ID,
 
     /**
+     * Type of the PSU login in ASPSP
+     */
+    PSU_ID_TYPE,
+
+    /**
      * IP address of PSU browser, mobile phone, etc.
      */
     PSU_IP_ADDRESS,
